@@ -10,6 +10,7 @@ package my.concrete;
  *
  * @author Jay Stillman
  */
+import java.util.Scanner;
 public class Employee {
     
     private String name;
@@ -51,13 +52,6 @@ public class Employee {
         return "Employee{" + "name=" + name + ", jobTitle=" + jobTitle + ", benefits=" + benefits + '}';
     }
     
-          public static void main(String[] args) {
-        
-            
-            HourlyEmployee Jay = new HourlyEmployee(9,40,"Jay","Lifeguard",false);
-            
-            System.out.println(Jay);
-    
-}
+
 }
 
