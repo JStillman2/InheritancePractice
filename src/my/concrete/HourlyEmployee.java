@@ -12,40 +12,61 @@ package my.concrete;
  */
 public class HourlyEmployee extends Employee {
     
-    private int hourlyWage;
-    private int hours;
+    private int hourlyRate;
+    private int hoursWeek;
+    private int otHours;
+    private static final double OVERTIME_MULTIPLIER = 1.5;
 
-    public HourlyEmployee(int hourlyWage, int hours, String name, String jobTitle, boolean benefits) {
-        super(name, jobTitle, benefits);
-        this.hourlyWage = hourlyWage;
-        this.hours = hours;
+    @Override
+    public double getAnnualWages() {
+        return (hourlyRate * hoursWeek
+                + otHours* OVERTIME_MULTIPLIER)
+                * 52; 
     }
+    
+    
+    
+
+    public int getHourlyRate() {
+        return hourlyRate;
+    }
+
+    public void setHourlyRate(int hourlyRate) {
+        this.hourlyRate = hourlyRate;
+    }
+
+    public int getHoursWeek() {
+        return hoursWeek;
+    }
+
+    public void setHoursWeek(int hoursWeek) {
+        this.hoursWeek = hoursWeek;
+    }
+
+    public int getOtHours() {
+        return otHours;
+    }
+
+    public void setOtHours(int otHours) {
+        this.otHours = otHours;
+    }
+
+    
+    @Override
+    public String toString() {
+        return "HourlyEmployee{" + "hourlyRate=" + hourlyRate + ", hoursWeek=" + hoursWeek + ", otHours=" + otHours + '}';
+    }
+
+    
     
    
 
-    public int getHourlyWage() {
-        return hourlyWage;
-    }
-
-    public void setHourlyWage(int hourlyWage) {
-        this.hourlyWage = hourlyWage;
-    }
-
-    public int getHours() {
-        return hours;
-    }
-
-    public void setHours(int hours) {
-        this.hours = hours;
-    }
-
-    @Override
-    public String toString() {
-        return "HourlyEmployee{" + "hourlyWage=" + hourlyWage + ", hours=" + hours + '}';
-    }
 
 
-    
-    
-    
+
 }
+
+    
+    
+    
+

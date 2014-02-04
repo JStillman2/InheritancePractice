@@ -4,18 +4,16 @@
  * and open the template in the editor.
  */
 
-package my.concrete;
-
-import java.util.Scanner;
+package myinterface;
 
 /**
  *
- * @author Jay Stillman
+ * @author Nicole
  */
-public class MainA {
+public class MainOffice {
+     public static void main(String[] args) {
     
-              public static void main(String[] args) {
-        SalariedEmployee emp1 = new SalariedEmployee();
+    SalariedEmployee emp1 = new SalariedEmployee();
         emp1.setFirstName("Bob");
         emp1.setLastName("Smith");
         emp1.setMonthlySalary(2500);
@@ -27,10 +25,10 @@ public class MainA {
         HourlyEmployee emp2 = new HourlyEmployee();
         emp2.setFirstName("Sally");
         emp2.setLastName("Jones");
-        emp2.setHourlyRate(9);
-        emp2.setHoursWeek(40);
-        emp2.setOtHours(0);
-        
+        emp2.setHourlyRate(9.50);
+        emp2.setHoursPerWeek(40);
+        emp2.setOvertimeHoursPerWeek(0);
+        // no need to declare again, this was already done on line #22
         annualWages = emp2.getAnnualWages();
         System.out.println("Annual wages for " + emp2.getFirstName() + " "
             + emp2.getLastName() + ": " + annualWages);
@@ -44,9 +42,7 @@ public class MainA {
         annualWages = emp3.getAnnualWages();
         System.out.println("Annual wages for " + emp3.getFirstName() + " "
             + emp3.getLastName() + ": " + annualWages);
-    
-}
-            
-            
+        
+    }
     
 }

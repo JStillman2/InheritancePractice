@@ -10,25 +10,35 @@ package my.concrete;
  *
  * @author Jay Stillman
  */
-import java.util.Scanner;
+
 public class Employee {
     
-    private String name;
+    private String firstName;
+    private String lastName;
     private String jobTitle;
     private boolean benefits;
+
     
-        public Employee(String name, String jobTitle, boolean benefits) {
-        this.name = name;
-        this.jobTitle = jobTitle;
-        this.benefits = benefits;
         
-        }
-    public String getName() {
-        return name;
+   public double getAnnualWages() {
+        return 0;
+        
+   }
+
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public String getJobTitle() {
@@ -49,9 +59,9 @@ public class Employee {
 
     @Override
     public String toString() {
-        return "Employee{" + "name=" + name + ", jobTitle=" + jobTitle + ", benefits=" + benefits + '}';
+        return "Employee{" + "firstName=" + firstName + ", lastName=" + lastName + ", jobTitle=" + jobTitle + ", benefits=" + benefits + '}';
     }
-    
+
 
 }
 

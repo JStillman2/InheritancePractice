@@ -11,38 +11,49 @@ package myabstract;
  * @author Nicole
  */
 public class HourlyEmployee extends Employee {
-        private int hourlyWage;
-    private int hours;
 
-    public HourlyEmployee(int hourlyWage, int hours, String name, String jobTitle, boolean benefits) {
-        super(name, jobTitle, benefits);
-        this.hourlyWage = hourlyWage;
-        this.hours = hours;
+    
+    private double hourlyRate;
+    private double hoursPerWeek;
+    private double overtimeHoursPerWeek;
+    private static final double OVERTIME_MULTIPLIER = 1.5;
+    
+    
+    @Override
+    public double getAnnualWages() {
+        return (hourlyRate * hoursPerWeek
+                + overtimeHoursPerWeek * OVERTIME_MULTIPLIER)
+                * 52;
     }
     
-   
-
-    public int getHourlyWage() {
-        return hourlyWage;
+    public double getHourlyRate() {
+        return hourlyRate;
     }
 
-    public void setHourlyWage(int hourlyWage) {
-        this.hourlyWage = hourlyWage;
+    public void setHourlyRate(double hourlyRate) {
+        this.hourlyRate = hourlyRate;
     }
 
-    public int getHours() {
-        return hours;
+    public double getHoursPerWeek() {
+        return hoursPerWeek;
     }
 
-    public void setHours(int hours) {
-        this.hours = hours;
+    public void setHoursPerWeek(double hoursPerWeek) {
+        this.hoursPerWeek = hoursPerWeek;
+    }
+
+    public double getOvertimeHoursPerWeek() {
+        return overtimeHoursPerWeek;
+    }
+
+    public void setOvertimeHoursPerWeek(double overtimeHoursPerWeek) {
+        this.overtimeHoursPerWeek = overtimeHoursPerWeek;
     }
 
     @Override
     public String toString() {
-        return "HourlyEmployee{" + "hourlyWage=" + hourlyWage + ", hours=" + hours + '}';
+        return "HourlyEmployee{" + "hourlyRate=" + hourlyRate + ", hoursPerWeek=" + hoursPerWeek + ", overtimeHoursPerWeek=" + overtimeHoursPerWeek + '}';
     }
-
-
+    
     
 }
